@@ -1,0 +1,28 @@
+.tales {
+    width: 100%;
+}
+
+.carousel-inner {
+    width: 100%;
+    max-height: 500px !important;
+
+    .carousel-caption {
+        top: 80px;
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 68px;
+            font-weight: 900;
+            font-style: italic;
+        }
+
+        p {
+            background-color: #231b04;
+            font-family: 'Merriweather', serif;
+            font-size: 26px;
+            font-weight: 300;
+            padding: 1rem 1.5rem;
+            opacity: 0.7;
+        }
+    }
+}

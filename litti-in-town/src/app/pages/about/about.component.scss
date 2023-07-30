@@ -1,0 +1,29 @@
+.aboutus-pages {
+    padding-top: 92px;
+    padding-bottom: 40px;
+
+    .about-introduce {
+        background-color: #e8e8e8;
+
+        .info-intro {
+            padding: 1rem;
+
+            .title_intro {
+                font-size: 40px;
+                color: #333;
+                text-align: left;
+                font-family: NeutraText-Book;
+                font-weight: 300;
+                font-style: normal;
+            }
+
+            p {
+                line-height: 1.8rem;
+            }
+        }
+    }
+}
+
+section {
+    background: #e3d3af;
+}

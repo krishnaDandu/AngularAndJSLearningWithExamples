@@ -1,0 +1,21 @@
+.breadcrumb {
+  display: flex;
+  color: #2E2E38;
+
+  .breadcrumb-item {
+    display: inline-flex;
+    align-items: center;
+
+    &:not(:first-child) {
+    margin-left: 0.3rem;
+    }
+
+    a {
+      color: #2E2E38;
+    }
+
+    &.active {
+      font-weight: bold;
+    }
+  }
+}

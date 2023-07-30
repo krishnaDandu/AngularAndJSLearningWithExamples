@@ -1,0 +1,212 @@
+<section>
+
+  <div class="aboutus-pages">
+    <div class="container container-v2">
+       <div class="callUs">
+
+       </div>
+      <div class="about-introduce">
+        <ng-container *ngFor="let item of menuItems; let idx=index">
+          <ng-container *ngIf="item.category === 'Litti'">
+            <ng-container
+              *ngTemplateOutlet="itemCategory; context: { item: item, idx: idx}"
+            ></ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="item.category === 'Main Course'">
+            <ng-container
+              *ngTemplateOutlet="itemCategory; context: { item: item, idx: idx}"
+            ></ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="item.category === 'Coolers'">
+            <ng-container
+              *ngTemplateOutlet="itemCategory; context: { item: item, idx: idx}"
+            ></ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="item.category === 'Combos'">
+            <ng-container
+              *ngTemplateOutlet="itemCategory; context: { item: item, idx: idx}"
+            ></ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="item.category === 'Assorted Platter'">
+            <ng-container
+              *ngTemplateOutlet="itemCategory; context: { item: item, idx: idx}"
+            ></ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="item.category === '3 in 1'">
+            <ng-container
+              *ngTemplateOutlet="itemCategory; context: { item: item, idx: idx}"
+            ></ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="item.category === '2 in 1'">
+            <ng-container
+              *ngTemplateOutlet="itemCategory; context: { item: item, idx: idx}"
+            ></ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="item.category === 'Meals'">
+            <ng-container
+              *ngTemplateOutlet="itemCategory; context: { item: item, idx: idx}"
+            ></ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="item.category === 'Add-Ons'">
+            <ng-container
+              *ngTemplateOutlet="itemCategory; context: { item: item, idx: idx}"
+            ></ng-container>
+          </ng-container>
+
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #itemCategory let-item="item" let-idx="idx">
+  <div class="itemHeading">
+    <h2><!--Menu - {{idx+1}} :-->  {{ item.category }}</h2>
+  </div>
+  <h3 *ngIf="item.category === 'Assorted Platter'">
+    Baked litti with ghee - [3pcs each - any of your choice]
+  </h3>
+  <div class="row">
+    <div
+      class="col-sm-6 col-lg-6 mb-5"
+      *ngFor="let catItem of item.categoryItems"
+    >
+      <div class="box">
+        <div class="img-box">
+          <img class="w-100" [src]="catItem.itemImg" alt="" />
+        </div>
+        <div class="detail-box">
+          <h5>
+            {{ catItem.name }}
+          </h5>
+          <p>
+            {{ catItem.desc }}
+          </p>
+          <div class="options">
+            <h4 class="pull-right italic">
+              {{ catItem.perPlate }}
+            </h4>
+            <h6>Rs.{{ catItem.price }}/-</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<!-- <div class="col-sm-6 col-lg-4 mb-5">
+                        <div class="box">
+                            <div>
+                                <div class="img-box">
+                                    <img class="w-100" src="assets/images/menu/m1.jpg" alt="">
+                                </div>
+                                <div class="detail-box">
+                                    <h5>
+                                        Litti (Sattu) with Ghee
+                                    </h5>
+                                    <p>
+                                        Traditional baked litti (stuffed with Sattu - gram flour) - tossed and accompanied with Ghee. Along with Chokha (Roasted - potato, brinjal & tomato mash) and green coriander chutney
+                                    </p>
+                                    <div class="options">
+                                        <h4 class="pull-right italic">
+                                            3pcs per plate
+                                        </h4>
+                                        <h6>
+                                            INR 160
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+<!-- <div class="col-sm-6 col-lg-4">
+                        <div class="box">
+                            <div>
+                                <div class="img-box">
+                                    <img class="w-100" src="assets/images/menu/m2.jpg" alt="">
+                                </div>
+                                <div class="detail-box">
+                                    <h5>
+                                        Aloo Dhaniya Litti with Ghee
+                                    </h5>
+                                    <p>
+                                        Baked litti (stuffed with potato and coriander) - tossed and accompanied with Ghee. Along with Chokha (Roasted - potato, brinjal & tomato mash) and green coriander chutney.
+                                    </p>
+                                    <div class="options">
+                                        <h4 class="pull-right italic">
+                                            3pcs per plate
+                                        </h4>
+                                        <h6>
+                                            INR 160
+                                        </h6>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="box">
+                            <div>
+                                <div class="img-box">
+                                    <img src="assets/images/m1.png" alt="">
+                                </div>
+                                <div class="detail-box">
+                                    <h5>
+                                        Aloo Methi Litti with Ghee
+                                    </h5>
+                                    <p>
+                                        Baked litti (stuffed with potato and fenugreek) - tossed and Baked Litti accompanied with Ghee. Along with Chokha (Roasted - potato, brinjal & tomato mash) and green coriander chutney.
+                                    </p>
+                                    <div class="options">
+                                        <h4 class="pull-right italic">
+                                            3pcs per plate
+                                        </h4>
+                                        <h6>
+                                            INR 160
+                                        </h6>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 ">
+                        <div class="box">
+                            <div>
+                                <div class="img-box">
+                                    <img src="assets/images/m1.png" alt="">
+                                </div>
+                                <div class="detail-box">
+                                    <h5>
+
+                                        Paneer Litti with Ghee
+
+                                    </h5>
+                                    <p>
+                                        Baked litti (stuffed with Paneer) - tossed with Ghee. Along with chilli garlic dip, veg mayonnaise and green coriander chutney.
+                                    </p>
+                                    <div class="options">
+                                        <h4 class="pull-right italic">
+                                            3pcs per plate
+                                        </h4>
+                                        <h6>
+                                            INR 160
+                                        </h6>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
