@@ -1,0 +1,123 @@
+@use 'sass:map';
+@use '~@angular/material' as mat;
+@import '../../app/pages/pages.component.scss';
+@import '../../app/pages/sidemenu/sidemenu.component.scss';
+@import '../../app/pages/sidemenu/sidemenu-item/sidemenu-item.component.scss';
+
+@include mat.core();
+
+$primary : mat.$indigo-palette;
+$accent  : mat.$orange-palette;
+$warn    : mat.$red-palette;
+
+
+$primary-app-primary: mat.define-palette($primary , 400);
+$primary-app-accent:  mat.define-palette($accent , 900);
+$primary-app-warn:    mat.define-palette($warn );
+$cdk-theme:   mat.define-light-theme($primary-app-primary, $primary-app-accent,$primary-app-warn);
+
+
+//@import '/app/auth/auth.component.scss';
+// @import '../app/dashboard-widget/dashcard/dashcard.component.scss';
+// @import '../app/dashboard-widget/profile-card/profile-card.component.scss';
+// @import '../app/dashboard-widget/round-progressbar/round-progressbar.component.scss';
+// @import '../app/dashboard-widget/sales-list/sales-list.component.scss';
+//mat.$light-theme-background-palette:(
+//  status-bar:map_get(mat.$grey-palette, 300),
+//  app-bar:map_get(mat.$grey-palette, 100),
+//  background: map_get(mat.$indigo-palette, 50),
+//  hover:      rgba(black, 0.04), // TODO(kara): check style with Material Design UX
+//  card:       white,
+//  dialog:     white,
+//  disabled-button: rgba(black, 0.12),
+//  raised-button: white,
+//  focused-button: rgba(black, 0.06),
+//  selected-button: map_get(mat.$grey-palette, 300),
+//  selected-disabled-button: map_get(mat.$grey-palette, 400),
+//  disabled-button-toggle: map_get(mat.$grey-palette, 200),
+//  unselected-chip: map_get(mat.$grey-palette, 300),
+//  disabled-list-option: map_get(mat.$grey-palette, 200),
+//);
+
+
+cdk-sidemenu{
+    $sidemenu-app-primary: mat.define-palette($primary , 400);
+    $sidemenu-app-accent:  mat.define-palette($accent , 900);
+    $sidemenu-app-warn:    mat.define-palette($warn );
+    $cdk-sidemenu-theme:   mat.define-dark-theme($primary-app-primary, $primary-app-accent,$primary-app-warn);
+    @include mat.list-theme($cdk-sidemenu-theme);
+    
+    .mat-expansion-indicator::after {
+        color:white;
+    }
+
+    .mat-progress-spinner circle, .mat-spinner circle {
+        stroke: #ffffff;
+    }
+
+    .hide-expansion-icon{
+        .mat-expansion-indicator::after {
+            display:none
+        }
+    }
+
+    .mat-form-field-wrapper{
+        margin:0 !important;
+        padding:0 !important;
+    }
+}
+
+app-project-detail{
+    
+    .detail-content{
+        .mat-grid-tile-content{
+            display: flex;
+            flex-direction: column;
+            align-items:start;
+            justify-content: start;
+        }
+    }
+}
+
+
+cdk-sidemenu-item{
+    @include sidemenu-item($cdk-theme,20px)
+}
+
+
+cdk-dashcard {
+    $dashcard-primary: mat.define-palette($primary);
+    $dashcard-accent:  mat.define-palette($accent);
+    $dashcard-warn:    mat.define-palette($warn);
+    $dashcard-theme:   mat.define-dark-theme($dashcard-primary, $dashcard-accent,$dashcard-warn);
+    // @include dashcard($dashcard-theme);
+}
+
+cdk-profile-card{
+  $dashboard-profile-primary: mat.define-palette($primary , 400);
+    $dashboard-profile-accent:  mat.define-palette($accent , 900);
+    $dashboard-profile-warn:    mat.define-palette($warn );
+    $cdk-dashboard-profile-theme:   mat.define-dark-theme($dashboard-profile-primary, $dashboard-profile-accent,$dashboard-profile-warn);
+    // @include dashboard-profile($cdk-dashboard-profile-theme);
+    // @include mat.tabs-theme($cdk-dashboard-profile-theme);
+}
+//@include mat.all-component-themes($cdk-theme);
+@include auth($cdk-theme);
+// @include round-progressbar($cdk-theme);
+// @include sales-list($cdk-theme);
+
+// .components-container-gt-xs {
+//     //padding: 20px;
+//     // background-color: #fdfdfd;
+// }
+// .components-container-xs {
+//     //padding: 5px !important;
+//     // background-color: #fdfdfd;
+// }
+// .component-preview {
+//     //padding: 20px;
+// }
+// .ps-content {
+//   //height: 100%;
+// }
+

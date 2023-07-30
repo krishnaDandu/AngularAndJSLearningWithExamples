@@ -1,0 +1,72 @@
+.aboutus-pages {
+  padding-top: 92px;
+  padding-bottom: 40px;
+
+  .about-introduce {
+    background-color: #e3d3af;
+    margin-top: 5rem;
+
+    .itemHeading {
+        padding: 1rem;
+        background-color: #ad2826;
+        margin-bottom: 1rem;
+        text-align: left;
+        color: #fff;
+
+    }
+
+    .info-intro {
+      padding: 1rem;
+
+      .title_intro {
+        font-size: 40px;
+        color: #333;
+        text-align: left;
+        font-family: NeutraText-Book;
+        font-weight: 300;
+        font-style: normal;
+      }
+
+      p {
+        line-height: 1.8rem;
+      }
+    }
+
+    .box {
+      color: #ffffff;
+      background: #705512;
+
+      .img-box {
+        background: #ad2826;
+        text-align: center;
+        /* height: 364px; */
+        vertical-align: middle;
+        display: flex;
+        padding-bottom: 5px;
+        /* border-bottom-right-radius: 50px; */
+        border: 2px solid #ad9a9a;
+
+        img {
+          width: 90%;
+          align-self: last baseline;
+          border-bottom-right-radius: 30px;
+        }
+      }
+
+      .detail-box {
+        padding: 1rem;
+
+        h4 {
+          font-size: 0.9rem;
+          font-style: italic;
+          background-color: #966e0c;
+          padding: 2px 5px;
+        }
+      }
+    }
+  }
+}
+
+section {
+  background: #e3d3af;
+}
